@@ -1,4 +1,4 @@
-# ParcialMISW4104
+# ParcialMISW4104 Elaborado por Keneth Bravo
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
 
