@@ -11,15 +11,25 @@ import { VehiculoService } from '../vehiculo.service';
 export class VehiculoListComponent {
 
   vehiculos: Array<Vehiculo>=[];
+  vehiculosMarca:{[marca:string]:number}={};
 
   constructor(private vehiculoService:VehiculoService){}
 
   getVehiculos():void{
     this.vehiculoService.getVehiculos().subscribe((data) => {
       this.vehiculos  = data;
+      this.contarVehiculosPorMarca();
     });
- 
+  }
 
+  contarVehiculosPorMarca(): void {
+    this.vehiculos.forEach(vehiculo => {
+      if (this.vehiculosMarca[vehiculo.marca]) {
+        this.vehiculosMarca[vehiculo.marca]++;
+      } else {
+        this.vehiculosMarca[vehiculo.marca] = 1;
+      }
+    });
   }
 
   ngOnInit(){
