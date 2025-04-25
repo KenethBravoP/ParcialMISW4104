@@ -51,9 +51,9 @@ describe('VehiculoListComponent', () => {
     expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
   });
 
-  it('Deberia crear una tabla con 3 vehiculos rmas el la fila de header', () => {
+  it('Deberia crear una tabla con 3 vehiculos (3 filas) y una fila de header', () => {
     const rows = fixture.debugElement.queryAll(By.css('table tr'));
-    expect(rows.length).toBe(4);
+    expect(rows.length).toBe(4); // 3 filas y 1 fila header
   });
 
   it('Debe mostrar un total por cada marca existente', () => {
