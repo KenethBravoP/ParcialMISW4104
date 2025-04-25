@@ -1,15 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { VehiculoListComponent } from './vehiculo/vehiculo-list/vehiculo-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        HttpClientTestingModule,
+       
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        VehiculoListComponent
       ],
     }).compileComponents();
   });
@@ -23,6 +28,7 @@ describe('AppComponent', () => {
   it(`should have as title 'ParcialMISW4104'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    console.log(app.title)
     expect(app.title).toEqual('ParcialMISW4104');
   });
 
@@ -30,6 +36,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ParcialMISW4104');
+    expect(compiled.querySelector('h1')?.textContent).toContain('TuSegundazo.com');
   });
 });
