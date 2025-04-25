@@ -1,0 +1,19 @@
+.titulo-con-sombra {
+    font-size: 36px;
+    color: #333;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+.tabla-contenedor {
+    max-width: 600px; /* Puedes ajustar el ancho a tu gusto */
+    margin-left: 0; /* alineado a la izquierda */
+  }
+  
+  .tabla-contenedor .table-responsive {
+    width: 100%;
+  }
+  
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+  }

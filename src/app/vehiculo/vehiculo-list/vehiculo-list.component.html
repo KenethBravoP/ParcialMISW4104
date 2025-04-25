@@ -1,40 +1,41 @@
 <div class="container my-4 text-start">
 
-  <h1><strong>TuSegundazo.com</strong></h1>
-
+  <h1 class="titulo-con-sombra"><strong>TuSegundazo.com</strong></h1>
   <hr>
-
-  <!-- Imagen responsiva desde assets -->
   <img src="/car.jpg" alt="Car Image" class="img-fluid mt-3 mb-4">
 
-  <!-- Tabla responsiva -->
-  <div class="table-responsive">
-    <table class="table table-bordered table-hover">
-      <thead class="table-dark">
-        <tr>
-          <th>#</th>
-          <th>Marca</th>
-          <th>Línea</th>
-          <th>Modelo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let vehiculo of vehiculos; index as i">
-          <td>{{ i + 1 }}</td>
-          <td>{{ vehiculo.marca }}</td>
-          <td>{{ vehiculo.linea }}</td>
-          <td>{{ vehiculo.modelo }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Aquí envuelvo la tabla en un div especial -->
+  <div class="tabla-contenedor mb-4">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Marca</th>
+            <th>Línea</th>
+            <th>Modelo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vehiculo of vehiculos; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.linea }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div *ngFor="let marca of (vehiculosMarca | keyvalue)">
-    <p><strong>Total {{ marca.key }}:</strong> {{ marca.value }} vehículos</p>
+  <div class="mt-3">
+    <div *ngFor="let marca of (vehiculosMarca | keyvalue)">
+      <p><strong>Total {{ marca.key }}:</strong> {{ marca.value }} vehículos</p>
+    </div>
   </div>
 
-  <footer class="mt-4 text-muted small text-center">
-    © 2025 TuSegundazo.com  Contact us: +57 3102105253 - info&#64;tusegundazo.com
+  <footer class="mt-5 text-muted small text-center">
+    © 2025 TuSegundazo.com | Contact us: +57 3102105253 - info&#64;tusegundazo.com
   </footer>
 
 </div>
